@@ -1,0 +1,62 @@
+.card{
+  max-width:800px;
+  margin:0 auto;
+  padding: 10px;
+  }
+li{
+  list-style-type:none;
+  cursor:pointer;
+  margin:10px 0;
+}
+li .card:hover{
+  border:2px solid blue;
+}
+ol{
+  padding:0;
+}
+
+
+.btn{
+  padding: 15px 45px;
+  margin-left:0px ;
+  background-color: #234cd4;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  align-content: center;
+
+
+}
+#home{
+margin-top: -350px;
+
+}
+.nav{
+  height: 200px;
+  width: 800px;
+  margin-left: 20px;
+ 
+ }
+ p{
+
+  
+  padding-left: 40PX;
+  
+}
+img{
+  margin-left: 60px;
+
+}
+.fi{
+  margin-left: 25px;
+}
+.img:hover{
+
+  width: 100px;
+  height: 100px;
+}
+.ai{
+  margin-left: 45px;
+}

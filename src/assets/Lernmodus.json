@@ -1,0 +1,438 @@
+{
+    "questions": [{
+            "questionText": "Which type of file system is created by mkfs when it is executed with the block device name only and without any additional parameters",
+            "options": [{
+                    "text": "A. ' XFS"
+                    
+                },
+                {
+                    "text": "B. VFAT"
+                },
+                {
+                    "text": "C. ext2",
+                    "correct": true
+                },
+                {
+                    "text": "D. ext3"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which umask value ensures that new directories can be read, written and listed by their owning user,read and listed by their owning group and are not accessible at all for everyone else?",
+            "options": [{
+                    "text": "A. 0750"
+                },
+                {
+                    "text": "B. 0027",
+                    "correct": true
+                },
+                {
+                    "text": "C. 0036"
+                },
+                {
+                    "text": "D. 7640"
+                    
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which of the following commands changes the number of days before the ext3 filesystem on /dev/sda1 has to run through a full filesystem check while booting?",
+            "options": [{
+                    "text": "A. tune2fs -d 200 /dev/sda1"
+                },
+                {
+                    "text": "B. tune2fs -c 200 /dev/sda1"
+                   
+                },
+                {
+                    "text": "C. tune2fs -i 200 /dev/sda1",
+                    "correct": true
+                },
+                {
+                    "text": "D. tune2fs --days 200 /dev/sda1"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which is the default percentage of reserved space for the root user on new ext4 filesystems?",
+            "options": [{
+                    "text": "A. 10%"
+                },
+                {
+                    "text": "B. 3%"
+                   
+                },
+                {
+                    "text": "C. 15%"
+                },
+                {
+                    "text": "D. 5%",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which of the following is true when a file system, which is neither listed in /etc/fstab nor known to system, is mounted manually?",
+            "options": [{
+                    "text": "A. systemd automatically generates a mount unit and monitors the mount point without changing it",
+                    "correct": true
+                },
+                {
+                    "text": "B. systemd ignores any manual mounts which are not done using the systemctl mountcommand"
+                },
+                {
+                    "text": "C. The command systemctl mountsynccan be used to create a mount unit based on the existing mount"
+                },
+                {
+                    "text": "D. systemctl unmountmust be used to remove the mount because system opens a file descriptor on the mount point"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "What does the command mount --bind do",
+            "options": [{
+                    "text": "A. It makes the contents of one directory available in another directory",
+                    "correct": true
+                },
+                {
+                    "text": "B. It mounts all available filesystems to the current directory"
+                },
+                {
+                    "text": "C. It mounts all user mountable filesystems to the users home directory"
+                },
+                {
+                    "text": "D. It mounts all file systems listed in /etc/fstab which have the option userbindset"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Consider the following output from the command ls -i:How would a new file named c.txt be created with the same inode number as a.txt (Inode 525385)?",
+            "options": [{
+                    "text": "A. ln -h a.txt c.txt"
+                },
+                {
+                    "text": "B. ln c.txt a.txt"
+                    
+                },
+                {
+                    "text": "C. ln a.txt c.txt",
+                    "correct": true
+                },
+                {
+                    "text": "D. cln -f c.txt a.txt"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which chown command changes the ownership to dave and the group to staff on a file named data.txt?",
+            "options": [{
+                    "text": "A. chown dave/staff data.txt"
+                   
+                },
+                {
+                    "text": "B. chown -u dave -g staff data.txt"
+                },
+                {
+                    "text": "C. chown --user dave --group staff data.txt"
+                },
+                {
+                    "text": "D. chown dave:staff data.txt",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },{
+            "questionText": "Which program updates the database that is used by the locate command? (Specify ONLY the command without any path or parameters).",
+            "options": [
+                {
+                    "text":"updatedb",
+                    "correct": true
+                }
+                
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which command displays the current disk space usage for all mounted file systems? (Specify ONLY the command without any path or parameters.)?",
+            "options": [
+                {
+                    "text": "df",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel? (Specify the file name only without any path.)",
+            "options": [
+                {
+                    "text": "cmdline",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which program runs a command in specific intervals and refreshes the display of the programs output? (Specify ONLY the command without any path or parameters.)",
+            "options": [
+                {
+                    "text": "watch",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Following the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiled by the system administrator be placed in order to be made available to all users on the system? (Specify the full path to the directory.)",
+            "options": [{
+                    "text": "/usr/local/bin",
+                    "correct": true
+                }
+              
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
+            "options": [{
+                    "text": "nice",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "What directory contains configuration files for additional yum repositories? (Specify the full path to the directory.)",
+            "options": [
+                {
+                    "text": "/etc/yum.repos.d",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which command displays a list of all background tasks running in the current shell? (Specify ONLY the command without any path or parameters.)",
+            "options": [
+                {
+                    "text": "jobs",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        
+        
+        {
+            "questionText": "From a Bash shell, which of the following commands directly execute the instructions from the file /usr/local/bin/runme.shi without starting a subshell?",
+            "options": [{
+                    "text": "A. source /usr/local/bin/runme.sh   ",
+                    "correct": true
+                },
+                {
+                    "text": "B. /usr/local/bin/runme.sh"
+                },
+                {
+                    "text":"C. /bin/bash /usr/local/bin/runme.sh  ",
+                    "correct": true
+                },
+                {
+                    "text": " D. /usr/local/bin/runme.sh",
+                    "correct": true
+                } 
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which of the following commands can be used to determine how long the system has been running?",
+            "options": [{
+                    "text": "A. uptime ",
+                    "correct": true
+                },
+                {
+                    "text":"B. up ",
+                    "correct": true
+                },
+                {
+                    "text":"C. time --up"
+                },
+                {
+                    "text":  "D. uname -u"
+                    
+                },
+                {
+                    "text": "E. top ",
+                    "correct": true
+                    
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which wildcards will match the following filenames? ttyS0 ttyS1 ttyS2",
+            "options": [{
+                    "text": "A. ttyS[1-5]"
+                },
+                {
+                    "text": "B. tty?[0-5]  ",
+                    "correct": true
+                },
+                {
+                    "text": "C. tty*2  ",
+                    "correct": true
+                },
+                {
+                    "text": "D. tty[A-Z][012] ",
+                    "correct": true
+                }, 
+                {
+                    "text":"E. tty[Ss][02]"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText":"Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used to identify the intended partition?",
+            "options": [{
+                    "text":  "A. LABEL  ",
+                    "correct": true
+                }, 
+                {
+                    "text": "B.  FIND"
+                   
+                },
+                {
+                    "text": "C.  NAME"
+                },
+                {
+                    "text": "D. UUID ",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText":  "Which of the following files are found in the /boot/ filesystem?",
+            "options": [{
+                    "text":  "A. Linux kernel images  ",
+                    "correct": true
+                },
+                {
+                    "text":"B. Bash shell binaries"
+                },
+                {
+                    "text":"C. systemd target and service units"
+                },
+                {
+                    "text": "D. Initial ramdisk images ",
+                    "correct": true
+                },
+                {
+                    "text":  "E. fsck binaries"
+                   
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux?",
+            "options": [{
+                    "text": "A. An initramfs is a compressed file system archive, which can be unpacked to examine its contents  ",
+                    "correct": true
+                },
+                {
+                    "text": "B. An initramfs file contains the MBR, the bootloader and the Linux kernel."
+                },
+                {
+                    "text":"C. After a successful boot, the initramfs contents are available in /run/initramfs/."
+                },
+                {
+                    "text":"DThe kernel uses the initramfs temporarily before accessing the real root file system ",
+                    "correct": true
+                },
+                {
+                    "text": "E. An initramfs does not depend on a specific kernel version and is not changed after the initial installation"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Which of the following commands are valid in the GRUB 2 configuration file?",
+            "options": [{
+                    "text":"A. menuentry  ",
+                    "correct": true
+                },
+                {
+                    "text": "B. uefi"
+                    
+                },
+                {
+                    "text": "C. pxe-ifconfig"
+                    
+                },
+                {
+                    "text":  "D. insmod.",
+                    "correct": true
+                },
+                {
+                    "text":  "E. kpartx"
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Given the following two symbolic links in a System V init configuration: /etc/rc1.d/K01apache2 /etc/rc2.d/S02apache2 When are the scripts executed that are referenced by these links?",
+            "options": [{
+                    "text":  "A. S02apache2 is run when runlevel 2 is entered  ",
+                    "correct": true
+                },
+                {
+                    "text": "B. S02apache2 is run when runlevel 2 is left."
+                },
+                {
+                    "text": "C. K01apache2 is never run because K indicates a deactivated service."
+                },
+                {
+                    "text":  "D. Both S02apache2 and K01apache2 are run during a system shutdown."
+                    
+                },
+                {
+                    "text": "E. K01apache2 is run when runlevel 1 is entered. ",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        },
+        {
+            "questionText": "Given the following two symbolic links in a System V init configuration: /etc/rc1.d/K01apache2 /etc/rc2.d/S02apache2 When are the scripts executed that are referenced by these links?",
+            "options": [{
+                    "text":  "A. S02apache2 is run when runlevel 2 is entered  ",
+                    "correct": true
+                },
+                {
+                    "text": "B. S02apache2 is run when runlevel 2 is left."
+                },
+                {
+                    "text": "C. K01apache2 is never run because K indicates a deactivated service."
+                },
+                {
+                    "text":  "D. Both S02apache2 and K01apache2 are run during a system shutdown."
+                    
+                },
+                {
+                    "text": "E. K01apache2 is run when runlevel 1 is entered. ",
+                    "correct": true
+                }
+            ],
+            "explanation": ""
+        }
+        
+    ]
+}

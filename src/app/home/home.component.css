@@ -1,0 +1,42 @@
+#home{
+
+    margin-top: -300px;
+    
+    
+}
+img{
+
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    margin-top: -25px;
+    
+    
+
+}
+.logo{
+    width: 1500px;
+    height: 150px;
+    padding-top: 70px;
+    padding-left: 250px;
+
+    
+}
+.im1{
+
+    margin-right: 70px;
+    
+    
+    
+}
+img:hover{
+
+    width: 80px;
+    height: 90px; 
+
+}
+.im2{
+margin-left: 65px;
+
+
+}

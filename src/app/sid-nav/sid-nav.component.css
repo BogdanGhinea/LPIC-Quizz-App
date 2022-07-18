@@ -1,0 +1,58 @@
+ /* div{
+    
+  
+    float:right;
+    
+   
+   
+   
+  }
+  .btn-outline-primary:hover{
+  width:  80px;
+  
+  
+  
+  }
+ .item{
+   margin-top: 250px;
+   width: 80px;
+   height: 200px;
+ }
+ .btn-outline-primary{
+overflow: hidden;
+
+width:45px;
+height: 45px;
+font-size: 20px;
+
+ } */
+ .kal{
+
+  height: 50px;
+  width: 50px;
+  float: right;
+  
+ }
+ .kon{
+  height: 70px;
+  width: 60px;
+  float: right;
+  
+ }
+
+ .sidnav{
+   
+padding-top: 250px;
+
+  }
+  .kon:hover{
+
+margin-right: 50px;
+
+  }
+  .kal:hover{
+
+    margin-right: 50px;
+    
+      } 
+     

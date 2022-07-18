@@ -1,0 +1,102 @@
+{
+    "questions": [{
+
+    "questionText": "Which program updates the database that is used by the locate command? (Specify ONLY the command without any path or parameters).",
+    "questionstyp":"fi",
+    
+    "options": [
+        {
+            "text":"updatedb",
+            "correct": true
+        }
+        
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which command displays the current disk space usage for all mounted file systems? (Specify ONLY the command without any path or parameters.)?",
+    "questionstyp":"fi",
+    
+    "options": [
+        {
+            "text": "df",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel? (Specify the file name only without any path.)",
+    "questionstyp":"fi",
+    
+    "options": [
+        {
+            "text": "cmdline",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which program runs a command in specific intervals and refreshes the display of the programs output? (Specify ONLY the command without any path or parameters.)",
+    "questionstyp":"fi",
+    
+    "options": [
+        {
+            "text": "watch",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Following the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiled by the system administrator be placed in order to be made available to all users on the system? (Specify the full path to the directory.)",
+    "questionstyp":"fi",
+    
+    "options": [{
+            "text": "/usr/local/bin",
+            "correct": true
+        }
+      
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which command is used to start another command with a given nice level? (Specify ONLY the command without any path or parameters.)",
+    "questionstyp":"fi",
+    
+    "options": [{
+            "text": "nice",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "What directory contains configuration files for additional yum repositories? (Specify the full path to the directory.)",
+    "questionstyp":"fi",
+    
+    "options": [
+        {
+            "text": "/etc/yum.repos.d",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which command displays a list of all background tasks running in the current shell? (Specify ONLY the command without any path or parameters.)",
+    "questionstyp":"fi",
+    
+    "options": [
+        {
+            "text": "jobs",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+}
+
+
+    ]
+}

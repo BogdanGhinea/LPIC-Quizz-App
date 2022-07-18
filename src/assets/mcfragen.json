@@ -1,0 +1,194 @@
+{
+    "questions": [{
+    "questionText": "From a Bash shell, which of the following commands directly execute the instructions from the file /usr/local/bin/runme.shi without starting a subshell?",
+    "questionstyp":"mc",
+    
+    "options": [{
+            "text": "A. source /usr/local/bin/runme.sh",
+            "correct": true
+        },
+        {
+            "text": "B. /usr/local/bin/runme.sh"
+        },
+        {
+            "text":"C. /bin/bash /usr/local/bin/runme.sh",
+            "correct": true
+        },
+        {
+            "text": "D. . /usr/local/bin/runme.sh",
+            "correct": true
+        } 
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which of the following commands can be used to determine how long the system has been running?",
+    "questionstyp":"mc",
+    
+    "options": [{
+            "text": "A. uptime",
+            "correct": true
+        },
+        {
+            "text":"B. up",
+            "correct": true
+        },
+        {
+            "text":"C. time --up"
+        },
+        {
+            "text":  "D. uname -u"
+            
+        },
+        {
+            "text": "E. top",
+            "correct": true
+            
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which wildcards will match the following filenames? ttyS0 ttyS1 ttyS2",
+    "questionstyp":"mc",
+    "options": [{
+            "text": "A. ttyS[1-5]"
+        },
+        {
+            "text": "B. tty?[0-5]",
+            "correct": true
+        },
+        {
+            "text": "C. tty*2",
+            "correct": true
+        },
+        {
+            "text": "D. tty[A-Z][012]",
+            "correct": true
+        }, 
+        {
+            "text":"E. tty[Ss][02]"
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText":"Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used to identify the intended partition?",
+    "questionstyp":"mc",
+    "options": [{
+            "text":  "A. LABEL",
+            "correct": true
+        }, 
+        {
+            "text": "B.  FIND"
+           
+        },
+        {
+            "text": "C.  NAME"
+        },
+        {
+            "text": "D.UUID",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText":  "Which of the following files are found in the /boot/ filesystem?",
+    "questionstyp":"mc",
+    "options": [{
+            "text":  "A. Linux kernel images",
+            "correct": true
+        },
+        {
+            "text":"B. Bash shell binaries"
+        },
+        {
+            "text":"C. systemd target and service units"
+        },
+        {
+            "text": "D. Initial ramdisk images",
+            "correct": true
+        },
+        {
+            "text":  "E. fsck binaries"
+           
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which of the following statements are correct about the initial RAM disk involved in the boot process of Linux?",
+    "questionstyp":"mc",
+    "options": [{
+            "text": "A. An initramfs is a compressed file system archive, which can be unpacked to examine its contents.",
+            "correct": true
+        },
+        {
+            "text": "B. An initramfs file contains the MBR, the bootloader and the Linux kernel."
+        },
+        {
+            "text":"C. After a successful boot, the initramfs contents are available in /run/initramfs/."
+        },
+        {
+            "text":"D. The kernel uses the initramfs temporarily before accessing the real root file system.",
+            "correct": true
+        },
+        {
+            "text": "E. An initramfs does not depend on a specific kernel version and is not changed after the initial installation"
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Which of the following commands are valid in the GRUB 2 configuration file?",
+    "questionstyp":"mc",
+    "options": [{
+            "text":"A. menuentry",
+            "correct": true
+        },
+        {
+            "text": "B. uefi"
+            
+        },
+        {
+            "text": "C. pxe-ifconfig"
+            
+        },
+        {
+            "text":  "D. insmod",
+            "correct": true
+        },
+        {
+            "text":  "E. kpartx"
+        }
+    ],
+    "explanation": ""
+},
+{
+    "questionText": "Given the following two symbolic links in a System V init configuration: /etc/rc1.d/K01apache2 /etc/rc2.d/S02apache2 When are the scripts executed that are referenced by these links?",
+    "options": [{
+            "text":  "A. S02apache2 is run when runlevel 2 is entered.",
+            "correct": true
+        },
+        {
+            "text": "B. S02apache2 is run when runlevel 2 is left."
+        },
+        {
+            "text": "C. K01apache2 is never run because K indicates a deactivated service."
+        },
+        {
+            "text":  "D. Both S02apache2 and K01apache2 are run during a system shutdown."
+            
+        },
+        {
+            "text": "E. K01apache2 is run when runlevel 1 is entered.",
+            "correct": true
+        }
+    ],
+    "explanation": ""
+}
+
+
+]
+}

@@ -1,0 +1,66 @@
+<div class="container bg-light py-5 ">
+
+  <form #f="ngForm" (ngSubmit)="sind(f)">
+    <label for="form-control"> Name </label>
+    <input #yourName="ngModel" class="form-control" type="text" placeholder="Name" ngModel required>
+    <!-- <div class="alert alert-denger" *ngIf="['yourName.errors?.required && yourName.touched']">
+      Sie müssen Ihren Namen eingeben!</div> -->
+
+
+
+    <label for="form-control"> Email </label>
+    <input #Email="ngModel" class="form-control" type="text" [(ngModel)]="kontakt.email" placeholder="Email" ngModel
+      required>
+    <!-- <div class="alert alert-denger" *ngIf="['Email.errors?.required && Email.touched']">
+      Sie müssen Ihre Email Adresse eingeben!</div> -->
+
+
+    <label for="form-control">Message </label>
+    <textarea #nricht="ngModel" class="form-control" type="text" [(ngModel)]="kontakt.message" placeholder="Message"
+      ngModel required></textarea>
+    <!-- <div class="alert alert-denger" *ngIf="['nricht.errors?.required && nricht.touched']">
+      Schreiben Sie bitte einen Nachricht! </div> -->
+
+    <br>
+
+
+    <br>
+  </form>
+
+  <a href="meldung"><button class="btn btn-primary" type="submit"> Senden</button></a>
+
+</div>
+<!-- <a href="meldung">
+<button class="btn btn-primary" > Senden</button></a> -->
+ 
+<!-- <div class="container bg-light py-5 ">
+<form class="row g-3">
+  
+      <label for="validationDefault01" class="form-label">First name</label>
+      <input type="text" class="form-control" id="validationDefault01" value="" required>
+      <br>
+   
+    <br>
+   
+      <label for="validationDefault02" class="form-label">Last name</label>
+      <input type="text" class="form-control" id="validationDefault02" value="" required>
+      <br>
+  
+      <label for="validationDefault02" class="form-label">Email</label>
+      <input type="text" class="form-control" id="validationDefault02" value="" required>
+      <br>
+      <label for="validationDefault02" class="form-label">Message</label>
+      <textarea type="text" class="form-control" [(ngModel)]="kontakt.message"></textarea>
+      <br>
+   
+     </form>
+     <br>
+ 
+
+  <br>
+   <button class="btn btn-primary" type="submit" >Submit </button>
+</div >
+  -->
+
+
+  

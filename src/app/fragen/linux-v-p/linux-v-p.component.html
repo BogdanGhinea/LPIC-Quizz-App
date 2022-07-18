@@ -1,0 +1,445 @@
+<div id="home">
+
+
+    <div class="container mt-5" >
+      <div class="card">
+          <div class="d-flex justify-content-between p-3">
+              <div class="image">
+                  <H1 style="font-style: italic;">Full Prüfung Modus</H1>  
+              </div>
+              <div class="quiz-header">
+                  <h4 style="font-family: cursive;">Lerne Linux</h4>
+                  <span style="font-style: italic;">Viel Erfolg  : {{name}} </span>
+              </div>
+          </div>
+          <div class="nav"><div>
+              <img class="img" src="../../../assets/bilder/sc.png" alt=""(click)="singelchoices()" height="80px" width="80px"> <p> singel choices Fragen</p></div>   
+           <div><img class="img" src="../../../assets/bilder/mc.png" alt=""(click)="muchoices()" height="80px" width="80px"> <p> Multiable choices Fragen</p></div>
+           <div><img class="img" src="../../../assets/bilder/fi.png" alt=""(click)="fichoices()" height="80px" width="80px" >
+         <p class="fi"> Fill in Fragen</p></div>
+         <div><img class="img" id="im" src="../../../assets/bilder/all.png" alt=""(click)="allchoices()" height="80px" width="80px" >
+            <p class="ai"> all in</p></div>
+             </div>
+  
+  <!-- sc -->
+  
+         <ng-container *ngIf="startsc">
+          <div class="d-flex justify-content-around py-3">
+              <div class="score">
+                  
+    
+              </div>
+              <div class="question-remaining">
+                  <span style="font-style:italic">Frage {{currentQuestion+1}} auf {{questionList.length}}</span>
+              </div>
+              <div class="timer">
+                 <h5> {{counter}} Sec <i class="fa fa-spinner fa-pulse"></i></h5> 
+            
+    
+              </div>
+    
+          </div>
+          <div class="progress mb-3">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{currentQuestion+1}} of {{questionList.length}}</div>
+          </div>
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{percent}} % </div>
+            </div>
+            <br>
+            <div class="questions">
+              <div class="card">
+                  <h3> {{questionList[currentQuestion]?.questionText}} </h3>
+              </div>
+          </div>
+            <div class="options">
+               <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                   <li (click)="scf(currentQuestion+1,option)">
+                       <div  class="card">
+                           {{option.text}}
+                       </div>
+                  </li>
+               </ol>
+            
+            </div>
+            <div class="d-flex justify-content-between">
+                <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x"></i>zurück</button>
+                <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-arrows-rotate fa-3x"></i>Wiederholung</button>
+                <button [disabled]="currentQuestion===questionList.length-1" class="btn" (click)="nextQuestion(currentQuestion+1)">Weiter<i class="fa text-primary fa-chevron-right fa-3x"></i></button>
+            </div>
+         </ng-container>
+  
+  
+  
+  <!-- mc -->
+  
+  
+  
+  
+         <ng-container *ngIf="startmc">
+          <div class="d-flex justify-content-around py-3">
+              <div class="score">
+                
+    
+              </div>
+              <div class="question-remaining">
+                  <span style="font-style:italic">Frage {{currentQuestion+1}} auf {{questionList.length}}</span>
+              </div>
+              <div class="timer">
+                 <h5> {{counter}} Sec <i class="fa fa-spinner fa-pulse"></i></h5> 
+            
+    
+              </div>
+    
+          </div>
+          <div class="progress mb-3">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{currentQuestion+1}} of {{questionList.length}}</div>
+          </div>
+          <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{percent}} % </div>
+            </div>
+            <br>
+            <div class="questions">
+              <div class="card">
+                  <h3> {{questionList[currentQuestion]?.questionText}} </h3>
+              </div>
+          </div>
+            <div class="options">
+               <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                <li (click)="mcf(currentQuestion+1,option)">
+                       <div  class="card">
+                           {{option.text}}
+                       </div>
+                  </li>
+               </ol>
+            
+            </div>
+            <div class="d-flex justify-content-between">
+                <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x"></i>zurück</button>
+                <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-arrows-rotate fa-3x"></i>Wiederholung</button>
+                <button [disabled]="currentQuestion===questionList.length-1" class="btn" (click)="nextQuestion(currentQuestion+1)">Weiter<i class="fa text-primary fa-chevron-right fa-3x"></i></button>
+            </div>
+         </ng-container>
+  
+  
+  
+  
+  
+  
+  <!-- FI -->
+  
+  <ng-container *ngIf="startfi">
+  
+      
+      <div class="d-flex justify-content-around py-3">
+          <div class="score">
+            
+  
+          </div>
+          <div class="question-remaining">
+              <span style="font-style:italic">Frage {{currentQuestion+1}} auf {{questionList.length}}</span>
+          </div>
+          <div class="timer">
+             <h5> {{counter}} Sec <i class="fa fa-spinner fa-pulse"></i></h5> 
+        
+  
+          </div>
+  
+      </div>
+      <div class="progress mb-3">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{currentQuestion+1}} of {{questionList.length}}</div>
+      </div>
+      <div class="progress">
+          <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{percent}} % </div>
+        </div>
+        <br>
+        <div class="questions">
+          <div class="card">
+              <h3> {{questionList[currentQuestion]?.questionText}} </h3>
+          </div>
+      </div>
+      <div *ngIf="!keyinput">
+          <input type="text" #answer (keyup.enter)="compareAnswer(answer.value)" value="{{input}}">
+      </div>
+      <div *ngIf="keyinput">
+          <input type="text" #answer (keyup.enter)="compareAnswer(answer.value)" value="{{input}}">
+      </div>
+      <br><br><br><br>
+     
+      <div *ngIf="keyinput">
+          <div *ngIf="correctAnswer" (keyup.enter)="next()" >
+      
+              <div style="color:green ;font-size: 20px;">
+                  <div class="alert alert-success" role="alert">
+                      <h4 class="alert-heading">Well done!
+                          <br> Deine Antwort ist richtig!! Good for You
+                      </h4>
+                     
+                  </div>
+              </div>
+      
+          </div>
+      
+      <br>
+      <div>
+      
+          <div *ngIf="!correctAnswer">
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                      <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                  <strong>Holy guacamole!</strong>Sie sind weit von der richtigen Antwort entfernt!!.
+                  <br>Drucken Sie den "X" un versuchen Sie es nochmal!
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  ></button>
+                </div>
+             
+          </div>
+          </div>
+          
+      </div>
+      
+      <br>
+      <div>
+    
+    </div>
+  </ng-container>
+      
+  
+  
+
+
+
+
+
+  <!-- ai -->
+
+<ng-container *ngIf="startal">
+    <ng-container *ngIf="questionList[currentQuestion]?.questionstyp === 'sc'">
+
+         <div class="d-flex justify-content-around py-3">
+            <div class="score">
+               
+  
+            </div>
+            <div class="question-remaining">
+                <span style="font-style:italic">Frage {{currentQuestion+1}} auf {{questionList.length}}</span>
+            </div>
+            <div class="timer">
+               <h5> {{counter}} Sec <i class="fa fa-spinner fa-pulse"></i></h5> 
+          
+  
+            </div>
+  
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{currentQuestion+1}} of {{questionList.length}}</div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{percent}} % </div>
+          </div>
+          <br>
+          <div class="questions">
+            <div class="card">
+                <h3> {{questionList[currentQuestion]?.questionText}} </h3>
+            </div>
+        </div>
+          <div class="options">
+             <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                 <li (click)="scf(currentQuestion+1,option)">
+                     <div  class="card">
+                         {{option.text}}
+                     </div>
+                </li>
+             </ol>
+          
+          </div>
+          <div class="d-flex justify-content-between">
+              <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x"></i>zurück</button>
+              <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-arrows-rotate fa-3x"></i>Wiederholung</button>
+              <button [disabled]="currentQuestion===questionList.length-1" class="btn" (click)="nextQuestion(currentQuestion+1)">Weiter<i class="fa text-primary fa-chevron-right fa-3x"></i></button>
+          </div>
+       
+
+
+
+    </ng-container> 
+    <ng-container *ngIf="questionList[currentQuestion]?.questionstyp === 'mc'">
+
+
+        <div class="d-flex justify-content-around py-3">
+            <div class="score">
+               
+  
+            </div>
+            <div class="question-remaining">
+                <span style="font-style:italic">Frage {{currentQuestion+1}} auf {{questionList.length}}</span>
+            </div>
+            <div class="timer">
+               <h5> {{counter}} Sec <i class="fa fa-spinner fa-pulse"></i></h5> 
+          
+  
+            </div>
+  
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{currentQuestion+1}} of {{questionList.length}}</div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{percent}} % </div>
+          </div>
+          <br>
+          <div class="questions">
+            <div class="card">
+                <h3> {{questionList[currentQuestion]?.questionText}} </h3>
+            </div>
+        </div>
+          <div class="options">
+             <ol *ngFor="let option of questionList[currentQuestion]?.options">
+                 <li (click)="mcf(currentQuestion+1,option)">
+                     <div class="card">
+                         {{option.text}}
+                     </div>
+                </li>
+             </ol> 
+          
+          </div>
+          <div class="d-flex justify-content-between">
+              <button [disabled]="currentQuestion===0" class="btn" (click)="previousQuestion()"><i class="fa text-primary fa-chevron-left fa-3x"></i>zurück</button>
+              <button class="btn" (click)="resetQuiz()"><i class="fa fa-refresh text-primary fa-arrows-rotate fa-3x"></i>Wiederholung</button>
+              <button [disabled]="currentQuestion===questionList.length-1" class="btn" (click)="nextQuestion(currentQuestion+1)">Weiter<i class="fa text-primary fa-chevron-right fa-3x"></i></button>
+          </div>
+
+
+
+    </ng-container>
+    <ng-container *ngIf="questionList[currentQuestion]?.questionstyp === 'fi'">
+
+
+
+        <div class="d-flex justify-content-around py-3">
+            <div class="score">
+               
+    
+            </div>
+            <div class="question-remaining">
+                <span style="font-style:italic">Frage {{currentQuestion+1}} auf {{questionList.length}}</span>
+            </div>
+            <div class="timer">
+               <h5> {{counter}} Sec <i class="fa fa-spinner fa-pulse"></i></h5> 
+          
+    
+            </div>
+    
+        </div>
+        <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{currentQuestion+1}} of {{questionList.length}}</div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{'width': progress+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"> {{percent}} % </div>
+          </div>
+          <br>
+          <div class="questions">
+            <div class="card">
+                <h3> {{questionList[currentQuestion]?.questionText}} </h3>
+            </div>
+        </div>
+        <div *ngIf="!keyinput">
+            <input type="text" #answer (keyup.enter)="compareAnswer(answer.value)" value="{{input}}">
+        </div>
+        <div *ngIf="keyinput">
+            <input type="text" #answer (keyup.enter)="compareAnswer(answer.value)" value="{{input}}">
+        </div>
+        <br><br><br><br>
+       
+        <div *ngIf="keyinput">
+            <div *ngIf="correctAnswer" (keyup.enter)="next()" >
+        
+                <div style="color:green ;font-size: 20px;">
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Well done!
+                            <br> Deine Antwort ist richtig!! Good for You
+                        </h4>
+                       
+                    </div>
+                </div>
+        
+            </div>
+        
+        <br>
+        <div>
+        
+            <div *ngIf="!correctAnswer">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                      </svg>
+                    <strong>Holy guacamole!</strong>Sie sind weit von der richtigen Antwort entfernt!!.
+                    <br>Drucken Sie den "X" un versuchen Sie es nochmal!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  ></button>
+                  </div>
+               
+            </div>
+            </div>
+            
+        </div>
+        
+        <br>
+        <div>
+      
+      </div>
+
+
+
+    </ng-container>
+
+</ng-container>
+  
+  
+  
+  
+  
+  
+  
+  
+<ng-container *ngIf="routerlm">
+    <div class="row d-flex justify-content-between">
+        <img style="width:50% ;" class="img-fluid com-sm-12 mx-auto " src="../../../assets/bilder/Durch.png" width="50" alt="logo " alt="">
+        <div class="result text-center col-md-6 col-sm-12">
+            <span class="im1"> <img src="../../assets/bilder/lpic1.png" (click)="a" routerLink="../linux-l-m"  width="60px" height="60px"> <span class="im2">Linux Lernmodus </span></span>   
+            
+        </div>
+     </div>
+ </ng-container>
+  
+  
+         <ng-container *ngIf=" isQuizCompleted ">
+             <ng-container *ngIf=" correctAns > questionList.length-1 / 2">
+              <div class="row d-flex justify-content-between">
+                  <img style="width:50% ;" class="img-fluid com-sm-12 mx-auto " src="../../../assets/bilder/bestanden.png " alt="">
+                  <div class="result text-center col-md-6 col-sm-12">
+                      <h3>Congratulations!!<br>You have all the correct Answers<br>Below is your result:</h3>
+                      <p>Total Questions Atempted :{{questionList.length-1}}</p>
+                      <p>Total Correct Answered :{{ correctAns}}</p>
+                      <p>Total Wrong Answered :{{incorrectAnswer}}</p>
+                      
+                  </div>
+               </div>
+             </ng-container> 
+             <ng-container *ngIf="correctAns <= questionList.length-1 / 2">
+             <div class="row d-flex justify-content-between">
+                 <img style="width:50% ;" class="img-fluid com-sm-12 mx-auto " src="../../../assets/bilder/Durch.png" width="50" alt="logo " alt="">
+                 <div class="result text-center col-md-6 col-sm-12">
+                     <h3>Congratulations!!<br>Du hast alle Fragen beantwortet.<br>Below is your result:</h3>
+                     <p>Total Questions Atempted :{{questionList.length-1}}</p>
+                     <p>Total Correct Answered :{{ correctAns}}</p>
+                     <p>Total Wrong Answered :{{incorrectAnswer}}</p>
+                     
+                 </div>
+              </div>
+          </ng-container>
+
+         
+         </ng-container>
+      </div>
+    </div> 
+    
+    
